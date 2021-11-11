@@ -24,8 +24,9 @@ const SignIn = () => {
     const SigninApi = async () => {
         setIsLoading(true);
         // console.log("userDetails", userDetails);
+        //http://localhost:4000
         try {
-            const response = await axios.post("http://localhost:4000/api/signup?isAdmin=false", userDetails);
+            const response = await axios.post("https://honey-wish.herokuapp.com/api/signup?isAdmin=false", userDetails);
             setIsLoading(false);
             toast.success("SignUp Successfully", {
             })

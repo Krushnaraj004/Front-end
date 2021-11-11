@@ -20,7 +20,8 @@ const Wishlist = () => {
         const token = JSON.parse(localStorage.getItem("token"));       
         const itemId = item._id;
         try {
-            const response = await axios.delete(`http://localhost:4000/api/remove/wishlist?_id=${itemId}`,
+            //http://localhost:4000
+            const response = await axios.delete(`https://honey-wish.herokuapp.com/api/remove/wishlist?_id=${itemId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -46,8 +47,9 @@ const Wishlist = () => {
         const token = JSON.parse(localStorage.getItem("token"));
         //api call
         try {
+            //http://localhost:4000
             const response = await axios.post(
-                "http://localhost:4000/api/add/order",
+                "https://honey-wish.herokuapp.com/api/add/order",
                 {
                     ProductId: itempro,
                     orderDate: Date.now(),

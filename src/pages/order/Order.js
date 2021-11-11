@@ -15,12 +15,12 @@ const Order = () => {
     }, [orderData]);
 
     //delete
-
+    //http://localhost:4000
     const DeleteProductsApi = async (item) => {
         const token = JSON.parse(localStorage.getItem("token"));
         const itemId = item._id;
         try {
-            const response = await axios.delete(`http://localhost:4000/api/remove/order?_id=${itemId}`,
+            const response = await axios.delete(`https://honey-wish.herokuapp.com/api/remove/order?_id=${itemId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -44,8 +44,9 @@ const Order = () => {
     const getOrdersApi = async () => {
         const token = JSON.parse(localStorage.getItem("token"));
         // console.log("token: ", token);
+        //http://localhost:4000
         try {
-            const response = await axios.get("http://localhost:4000/api/get/order", {
+            const response = await axios.get("https://honey-wish.herokuapp.com/api/get/order", {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },

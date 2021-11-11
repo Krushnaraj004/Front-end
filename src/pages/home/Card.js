@@ -21,9 +21,10 @@ const Card = ({ productsData}) => {
     const addToWishlist = async (_id) => {
         if (!checkLogin) return history.push("/login");
         //api call
+        //http://localhost:4000
         try {
             const response = await axios.post(
-                "http://localhost:4000/api/add/wishlist",
+                "https://honey-wish.herokuapp.com/api/add/wishlist",
                 {
                     ProductId: _id,
                 },
@@ -48,9 +49,10 @@ const Card = ({ productsData}) => {
         if (!checkLogin) return history.push("/login");
 
         //api call
+        //http://localhost:4000
         try {
             const response = await axios.post(
-                "http://localhost:4000/api/add/order",
+                "https://honey-wish.herokuapp.com/api/add/order",
                 {
                     ProductId: _id,
                     orderDate: Date.now(),

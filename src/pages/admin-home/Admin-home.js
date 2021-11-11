@@ -18,7 +18,8 @@ const AdminHome = () => {
         const token = JSON.parse(localStorage.getItem("token"));
         // console.log("token", token);
         try {
-            const response = await axios.get("http://localhost:4000/get/Product",
+            //http://localhost:4000
+            const response = await axios.get("https://honey-wish.herokuapp.com/get/Product",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -41,7 +42,8 @@ const AdminHome = () => {
         const token = JSON.parse(localStorage.getItem("token"));
         const itemId= item._id;
         try {
-            const response = await axios.delete(`http://localhost:4000/remove/Product?_id=${itemId}`,
+            //http://localhost:4000
+            const response = await axios.delete(`https://honey-wish.herokuapp.com/remove/Product?_id=${itemId}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -67,8 +69,9 @@ const AdminHome = () => {
         console.log("token: ", token);
 
         try {
+            //http://localhost:4000
             const response = await axios.post(
-                "http://localhost:4000/add/Product",
+                "https://honey-wish.herokuapp.com/add/Product",
                 Product,
                 {
                     headers: {

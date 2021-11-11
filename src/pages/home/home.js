@@ -22,8 +22,9 @@ const Home = () => {
     const getproductsApi = async () => {
         const token = JSON.parse(localStorage.getItem("token"));
         // console.log("token", token);
+        //http://localhost:4000
         try {
-            const response = await axios.get("http://localhost:4000/get/user/Product",
+            const response = await axios.get("https://honey-wish.herokuapp.com/get/user/Product",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
